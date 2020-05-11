@@ -31,7 +31,7 @@ class LavalinkBootstrap:
         
         self.prepare_version_number() # Fixes #1
 
-        self.download_command = f"curl https://github.com/Frederikam/Lavalink/releases/download/{self._version_number}/Lavalink.jar -O"
+        self.download_command = f"wget https://github.com/Frederikam/Lavalink/releases/latest/download/Lavalink.jar"
         print(f"Download command: {self.download_command}")
 
         

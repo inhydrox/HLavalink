@@ -13,7 +13,7 @@ class LavalinkBootstrap:
     """
     
     def prepare_version_number(self):
-        
+   
         self._version_number = popen(
             
             """curl --silent "https://api.github.com/repos/Frederikam/Lavalink/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")'"""
@@ -27,7 +27,7 @@ class LavalinkBootstrap:
         """
         
         self.prepare_version_number() # Fixes #1
-        
+        self.deletefile = 'rm Lavalink.jar'
         self.download_command = f"curl https://github.com/Frederikam/Lavalink/releases/download/{self._version_number}/Lavalink.jar -O"
         print(f"Download command: {self.download_command}")
 
@@ -128,7 +128,9 @@ class LavalinkBootstrap:
         print(
             "[INFO] Starting Lavalink..."
         )
-
+        system(
+            self.deletefile
+        )
         try:
 
             system(

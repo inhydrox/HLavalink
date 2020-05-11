@@ -11,6 +11,9 @@ class LavalinkBootstrap:
     """
     Class we're using to get Lavalink working on Heroku
     """
+    system(
+        self.deletefile
+    )
     
     def prepare_version_number(self):
    
@@ -127,9 +130,6 @@ class LavalinkBootstrap:
 
         print(
             "[INFO] Starting Lavalink..."
-        )
-        system(
-            self.deletefile
         )
         try:
 

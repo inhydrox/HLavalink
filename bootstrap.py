@@ -11,12 +11,11 @@ class LavalinkBootstrap:
     """
     Class we're using to get Lavalink working on Heroku
     """
-    system(
-        self.deletefile
-    )
     
     def prepare_version_number(self):
-   
+        system(
+            self.deletefile
+        )
         self._version_number = popen(
             
             """curl --silent "https://api.github.com/repos/Frederikam/Lavalink/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")'"""

@@ -19,7 +19,7 @@ class LavalinkBootstrap:
         )
         self._version_number = popen(
             
-            """curl --silent "https://api.github.com/repos/Frederikam/Lavalink/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")'"""
+            """curl --silent "https://api.github.com/inhydrox/lavalink-heroku/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")'"""
           
         ).read().strip()
 
@@ -31,7 +31,7 @@ class LavalinkBootstrap:
         
         self.prepare_version_number() # Fixes #1
 
-        self.download_command = f"wget https://github.com/Frederikam/Lavalink/releases/latest/download/Lavalink.jar"
+        self.download_command = f"wget https://github.com/inhydrox/lavalink-heroku/releases/latest/download/Lavalink.jar"
         print(f"Download command: {self.download_command}")
 
         
